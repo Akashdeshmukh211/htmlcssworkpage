@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+  <div id="myElement">Hello, Anime.js!</div>
+
+  <script>
+    // Target the HTML element you want to animate
+    var element = document.getElementById("myElement");
+    console.log(element)
+    // Create an Anime.js animation
+    var animation = anime({
+        targets: element,
+  innerHTML: [0, 10000],
+  easing: 'linear',
+  round: 10 // Will round the animated value to 1 decimal
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchInput" onkeyup="searchOptions()" placeholder="Search...">
+
+<select id="mySelect">
+  <option value="option1">Option 1</option>
+  <option value="option2">Option 2</option>
+  <option value="option3">Option 3</option>
+  <option value="option4">Option 4</option>
+</select>
+
+</body>
+<script>
+    function searchOptions() {
+  // Get the user input and convert it to lowercase for case-insensitive matching
+  var input = document.getElementById("searchInput").value.toLowerCase();
+
+  // Get the select element and its options
+  var select = document.getElementById("mySelect");
+  var options = select.getElementsByTagName("option");
+
+  // Loop through each option and hide/show based on the search input
+  for (var i = 0; i < options.length; i++) {
+    var optionText = options[i].text.toLowerCase();
+    var optionValue = options[i].value.toLowerCase();
+
+    // If the search input matches the option's text or value, show the option; otherwise, hide it
+    if (optionText.indexOf(input) > -1 || optionValue.indexOf(input) > -1) {
+      options[i].style.display = "";
+    } else {
+      options[i].style.display = "none";
+    }
+  }
+}
+
+</script>
+</html>
